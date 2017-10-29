@@ -128,7 +128,7 @@ class Agent:
                     nextstates = [var[4] for var in experiences]
                     pred_reward = sess.run(reward_prection, feed_dict={network_state:nextstates, keep_prob:1.0})
 
-                    ### On Policy update
+                    ### Off Policy update
                     for index in range(BATCH_SIZE):
                         # TODO: Pop state, action, reward, terminalstate, newstate out of experiences !
                         state, action, reward, terminalstate, newstate = experiences[index]
